@@ -13,8 +13,11 @@ let package = Package(
         ),
     ],
     dependencies: [
-        // Digia Engage iOS SDK (local)
-        .package(name: "DigiaEngage", path: "/Users/ram/Digia/digia_engage/iOS"),
+        // Digia Engage iOS SDK
+        .package(
+            url: "https://github.com/Digia-Technology-Private-Limited/digia_engage_iOS.git",
+            from: "1.0.0-beta.1"
+        ),
         // MoEngage iOS SDK
         .package(
             url: "https://github.com/moengage/MoEngage-iOS-SDK.git",
@@ -25,7 +28,7 @@ let package = Package(
         .target(
             name: "DigiaMoEngage",
             dependencies: [
-                .product(name: "DigiaEngage", package: "DigiaEngage"),
+                .product(name: "DigiaEngage", package: "digia_engage_iOS"),
                 .product(name: "MoEngageInApps", package: "MoEngage-iOS-SDK"),
             ],
             path: "Sources/DigiaMoEngage"
