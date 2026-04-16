@@ -79,11 +79,11 @@ public final class MoEngagePlugin: DigiaCEPPlugin {
     }
 
     public func notifyEvent(_ event: DigiaExperienceEvent, payload: InAppPayload) {
-        guard let campaignId = payload.cepContext["campaignId"] else {
-            logger.warning("\(self.identifier): notifyEvent — missing campaignId in cepContext")
+        guard payload.cepContext["campaignId"] != nil else {
+            logger.warning("(self.identifier): notifyEvent  missing campaignId in cepContext")
             return
         }
-        dispatcher.dispatch(event, campaignId: campaignId)
+        dispatcher.dispatch(event, payload: payload)
     }
 
     public func teardown() {
