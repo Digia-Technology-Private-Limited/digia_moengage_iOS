@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "DigiaMoEngage",
     platforms: [
-        .iOS(.v16),
+        .iOS(.v17),
     ],
     products: [
         .library(
@@ -16,7 +16,7 @@ let package = Package(
         // Digia Engage iOS SDK
         .package(
             url: "https://github.com/Digia-Technology-Private-Limited/digia_engage_iOS.git",
-            from: "1.0.0-beta.1"
+            from: "1.0.0-beta.2"
         ),
         // MoEngage iOS SDK
         .package(
